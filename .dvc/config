@@ -1,7 +1,8 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = \
+    url = gdrive://1X1VRxoeoAoIVMYLL7y76RI3zSKdcw3Y7/ml
+    gdrive_acknowledge_abuse = true
 ['remote "e"']
     url = gdrive://1X1VRxoeoAoIVMYLL7y76RI3zSKdcw3Y7/ml
     gdrive_acknowledge_abuse = true
