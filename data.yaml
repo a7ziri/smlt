@@ -1,0 +1,17 @@
+train: 'data/images/train'
+val: 'data/images/val'
+
+
+names: 
+  0: 'Dump truck' 
+  1: 'Excavator' 
+  2: 'Motor Grader' 
+  3: 'Roller' 
+  4: 'CMU' 
+  5: 'Trailer' 
+  6: 'Forklift Truck' 
+  7: 'Bucket Loader' 
+  8: 'Mixer' 
+  9: 'The tank' 
+  10: 'Bulldozer' 
+  11: 'Cleaning equipment'
