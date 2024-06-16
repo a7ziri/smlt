@@ -1,1 +1,3 @@
 data
+runs/detect/train6/weights
+yolov8m.pt
