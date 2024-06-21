@@ -1,0 +1,64 @@
+body {
+    font-family: 'Inter', sans-serif;
+
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+#video-frame {
+    width: 800px;
+}
+
+#camera-select {
+    border: none;
+    background-color: #DFDFDF;
+    padding: 18px 30px;
+    height: fit-content;
+    margin-top: 40px;
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#camera-select:focus-visible {
+    outline: none;
+}
+
+.camera-box {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    margin-top: 160px;
+    width: 1600px;
+    display: flex;
+}
+
+.right-block {
+    margin-left: 90px;
+    display: grid;
+    align-content: space-between;
+}
+
+.camera-text {
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 60px;
+}
+
+#detect-button {
+    font-weight: 400;
+    font-size: 40px;
+    border: none;
+    height: 48px;
+    border-bottom: 2px black solid;
+    width: 173px;
+    padding-left: 0px;
+
+    background-color: none;
+    cursor: pointer;
+}

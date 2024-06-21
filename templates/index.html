@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбор камеры</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">    
+    <script>
+        async function fetchCameras() {
+            const response = await fetch('/list_cameras');
+            const cameras = await response.json();
+            const cameraSelect = document.getElementById('camera-select');
+
+            cameras.forEach(camera => {
+                const option = document.createElement('option');
+                option.value = camera;
+                option.text = `Camera ${camera}`;
+                cameraSelect.add(option);
+            });
+
+            cameraSelect.addEventListener('change', function() {
+                const selectedCamera = cameraSelect.value;
+                document.getElementById('video-frame').src = `/raw_video_feed?camera_index=${selectedCamera}`;
+            });
+
+            // Инициализация видеопотока с первой камеры
+            if (cameras.length > 0) {
+                document.getElementById('video-frame').src = `/raw_video_feed?camera_index=${cameras[0]}`;
+            }
+
+        }
+        
+        function switchCamera() {
+                const selectedCamera = document.getElementById('camera-select').value;
+                window.location.href = `/stream?camera_index=${selectedCamera}`;
+        }
+
+        window.onload = fetchCameras;
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img id="video-frame" src="">
+        <div class="right-block">
+            <div class="camera-select-block">
+                <h1 class="camera-text">Choose your camera</h1>
+                <select id="camera-select"></select>
+            </div>
+            <button id="detect-button" onclick="switchCamera()">Detect →</button>
+        </div>
+    </div>    
+</body>
+</html>
